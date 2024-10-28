@@ -10,7 +10,7 @@ LE_PROJET_HEADER = '''
     '''
 LE_PROJET_INTRODUCTION = '''<p style="text-align:justify;">                    
             L'objectif est de prédire les risques d'accidents de la route à partir de la 
-            base de donnée nationale mise à disposition par le gouvernement Français.
+            base de données nationale mise à disposition par le gouvernement Français.
             <ul>
                 <li> Identification de zone à risque</li>
                 <li> Identification de caractéristiques agravantes</li>
@@ -797,8 +797,8 @@ DNN_MLPCLASSIFIER = '''<p style="text-align:justify;">
 # INTERPRETABILITE
 # ----------------
 INTERP_INTRODUCTION = '''<p style="text-align:justify;">
-        Nous avons comparé les résultats proposés par la librairie Shap (méthode agnostique) sur plusieurs 2 modèles simples et 1 DNN. Nous
-        avons étudié :<br>
+        Nous avons comparé les résultats proposés par la librairie Shap (méthode agnostique) sur plusieurs 
+        des modèles étudiés précédemment (régression logisitique, XGBoost ainsi que 1 DNN). Nous avons étudié :<br>
         <ul>
             <li> Graphique de Beeswarm</li>
             <li> Graphique de dépendance</li>
@@ -813,20 +813,27 @@ INTERP_FLOP10 = "<u><b>Flop 10</u></b>"
 INTERP_FORCE = "<u><b>Graphe de force (DNN)</u></b>"
 
 ML_RESULTATS_INTERPRETABILITE = '''<p style="text-align:justify;">
-        Nous devrions avoir des résultats assez similaires entre les deux méthodes SHAP, graphe de force et LIME. 
-        Si l’on retrouve des similitudes : <br>
+        Nous avons pu constater que si certaines variables semblent influencer fortement tous les modèles (comme 
+        les équipements de sécurité), ce n'est pas le cas de toutes :<br>
         <ul>
-            <li> importante influence de ‘user_secu1’
-            <li> idem pour ‘vehi_obsm_1’
-        </ul> 
-        Ce n’est pas le cas pour d’autres champs qui selon la méthode d’interprétabilité privilégiée n’aura 
-        pas la même influence :<br>  
+            <li> La zone géographique apparait comme influençant fortement les modèles de XGBoost et DNN</li>
+            <li> mais se retrouve être la variable la moins significative pour la régression logistique</li>
+        </ul><br>
+        <br>
+        Autre constat, nous nous attendions à avoir pour un modèle donné, des résultats assez similaires entre SHAP 
+        (diagramme de Force) et LIME mais ce n'est pas forcément le cas.<br>
+        <br> Cela met en évidence les limites de ces méthodes d'interprétabilité qui apportent une part 
+        d'approximation / d'erreur inhérent à leur algorithmes différents (théorie des jeux pour SHAP et approximation 
+        locale pour LIME).<br>
+        <br>Ces méthodes apportent malgré tout un support apréciable pour :<br>
         <ul>
-            <li> ‘zone_geographique’ qui influence le modèle vision SHAP et qui n’apparait pas en méthode LIME.
-        </ul>
-        Ces écarts montrent les limites de ces modèles d’interprétabilité qui, s’ils permettent d’apporter 
-        des éléments d’explication quant au comportement d’un modèle de ML, ne permet pas d’expliquer 
-        précisément les raisons exactes : <u>les résultats restent des estimations</u>. 
+            <li> Justifier les résultats d'un modèle </li>
+            <li> Apporter la confiance indispensable à toute prise de décision</li>
+            <li> Elle peut également mettre en lumière des anomalies de prédiction et identifier des biais 
+            notamment moraux qui pourrait remettre en cause l'utilisation d'un modèle (problème d'équité)</li>
+        </ul>    
+        <br>
+ 
         '''
 
 # -----------------------------

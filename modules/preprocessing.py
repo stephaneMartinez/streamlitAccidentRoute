@@ -61,6 +61,17 @@ def main():
         # FEATURE ENGINEERING
         show_space(1)
         st.markdown(lb.PREPROCESSING_PIPELINE_FEATURE_ENGINEERING, unsafe_allow_html=True)
+        
+        affiche_clustermap = sac.switch(label="Cartographie obtenue 'Cluster Geographique'", align='start', size='sm', value=True)
+        if affiche_clustermap :
+            col1, col2 = st.columns([0.57, 0.43])
+            with col1 :
+                #show_space(1)
+                show_image(constant.CHEMIN_IMAGE+"Cluster_Carte_Monde.png")
+            
+            with col2 : 
+                show_image(constant.CHEMIN_IMAGE+"Cluster_Carte_France.png")
+
         affiche_cluster = sac.switch(label="Code transformer 'Cluster Geographique'", align='start', size='sm')
         if affiche_cluster :
             st.code(lb.PREPROCESSING_PIPELINE_FEATURE_ENGINEERING_CLUSTER_CODE, line_numbers=True)

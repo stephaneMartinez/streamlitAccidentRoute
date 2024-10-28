@@ -72,8 +72,6 @@ def main():
     if tabs == TAB_METHODOLOGIE :
         # OBJECTIF ET METHODOLOGIE
         st.markdown(lb.INTERP_INTRODUCTION, unsafe_allow_html=True)    
-        show_space(1)
-        st.markdown(lb.ML_RESULTATS_INTERPRETABILITE, unsafe_allow_html=True)
 
     elif tabs== TAB_RESULTATS:
         with st.expander(EXPENDEUR_RESULTAT_INTERP_SHAP_BEESWARM, False) :
@@ -161,12 +159,14 @@ def main():
                 show_image(constant.CHEMIN_IMAGE + "Interp_DNN_titre.png")
 
             with col2 :
-                st.markdown (lb.INTERP_TOP10, unsafe_allow_html=True) 
                 show_image(constant.CHEMIN_IMAGE + "InterpLime_DNN.png")
 
             st.markdown (lb.INTERP_FORCE, unsafe_allow_html=True)
             show_image(constant.CHEMIN_IMAGE + "InterpDiagrammeForce_DNN.png")
 
+        show_space(1)
+        st.markdown(lb.ML_RESULTATS_INTERPRETABILITE, unsafe_allow_html=True)
+        
     elif tabs==TAB_SIMULATION :
         show_error_404()    
             
