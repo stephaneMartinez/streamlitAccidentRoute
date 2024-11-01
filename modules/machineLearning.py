@@ -157,13 +157,13 @@ def main():
         with st.expander(EXPENDEUR_RESULTAT_ML_SMOTE_MULTI, False) :
             show_image(constant.CHEMIN_IMAGE + "ML_Resultats_SMOTE_multiClasses.png")
 
-        with st.expander(EXPENDEUR_RESULTAT_ML_UNDER_SAMPLER_MULTI):
+        with st.expander(EXPENDEUR_RESULTAT_ML_UNDER_SAMPLER_MULTI, True):
             show_image(constant.CHEMIN_IMAGE + "ML_Resultats_UnderSampling_multiClasses.png")
  
         with st.expander(EXPENDEUR_RESULTAT_ML_SMOTE_BINARY):
             show_image(constant.CHEMIN_IMAGE + "ML_Resultats_SMOTE_binary.png")
 
-        with st.expander(EXPENDEUR_RESULTAT_ML_UNDER_SAMPLER_BINARY):
+        with st.expander(EXPENDEUR_RESULTAT_ML_UNDER_SAMPLER_BINARY, True):
             show_image(constant.CHEMIN_IMAGE + "ML_Resultats_UnderSampling_binary.png")
 
         st.markdown(lb.ML_RESULTATS_BINAIRE, unsafe_allow_html=True)

@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit_antd_components as sac
+import Librairies.constant as constant
 from Librairies.utils import *
 import Librairies.texte as lb
 
@@ -11,7 +12,11 @@ TAB_ETAPE_CONCLUSION = 'Conclusions et perspectives'
 def main():
     st.subheader('Projet Fil Rouge Accident de la route', anchor=False)
     st.write(lb.LE_PROJET_HEADER)
- 
+
+    _,col2, _ = st.columns([0.35, 0.3, 0.35])
+    with col2 :
+        show_image(constant.CHEMIN_IMAGE+"pageGarde.jpg")
+
     tabs = sac.tabs([sac.TabsItem('Le projet', icon='easel'), sac.TabsItem("L'équipe", icon='cursor')], size='sm')
     if tabs == 'Le projet':
         show_space(1)

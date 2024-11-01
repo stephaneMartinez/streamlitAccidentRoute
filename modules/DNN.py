@@ -128,24 +128,24 @@ def main():
 
     
     elif tabs== TAB_RESULTATS:
-        with st.expander(EXPENDEUR_RESULTAT_DNN_MULTI, False) :
+        with st.expander(EXPENDEUR_RESULTAT_DNN_MULTI, True) :
             show_image(constant.CHEMIN_IMAGE + "DNN_Resultats_multi.png")
 
-        with st.expander(EXPENDEUR_RESULTAT_DNN_BINARY, False):
+        with st.expander(EXPENDEUR_RESULTAT_DNN_BINARY, True):
             show_image(constant.CHEMIN_IMAGE + "DNN_Resultats_binary.png")
  
         show_space(1)
         st.markdown(lb.DNN_COMPARATIF_TAILLE_DNN, unsafe_allow_html=True) 
         show_space(1)
 
-        with st.expander(EXPENDEUR_RESULTAT_DNN_STACKING_BINARY, False):
+        with st.expander(EXPENDEUR_RESULTAT_DNN_STACKING_BINARY, True):
             show_image(constant.CHEMIN_IMAGE + "DNN_Resultats_Stacking_binary.png")
 
         show_space(1)
         st.markdown(lb.DNN_XGBOOST, unsafe_allow_html=True) 
         show_space(1)
         
-        with st.expander(EXPENDEUR_RESULTAT_DNN_MLPCLASSIFIER_BINARY, False):
+        with st.expander(EXPENDEUR_RESULTAT_DNN_MLPCLASSIFIER_BINARY, True):
             show_image(constant.CHEMIN_IMAGE + "DNN_Resultats_MLPClassifier.png")
 
         show_space(1)
